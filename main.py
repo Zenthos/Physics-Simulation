@@ -77,14 +77,14 @@ def main():
                 clear_b.activate(pygame.mouse.get_pos(), shapes.ball_list, screen, button_list)
                 for button in button_list:
                     button.activate(pygame.mouse.get_pos(), shapes, screen, button_list)
-
+        
+        screen.draw(shapes)
         clear_p.draw_button(screen, shapes.poly_list)
         clear_s.draw_button(screen, shapes.line_list)
         clear_b.draw_button(screen, shapes.ball_list)
         for button in button_list:
             button.draw_button(screen, shapes)
 
-        screen.draw(shapes)
         screen.space.step(1 / 50.0)
         pygame.time.Clock().tick(60)
         pygame.display.flip()
